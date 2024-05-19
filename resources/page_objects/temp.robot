@@ -2,10 +2,10 @@
 Library    SeleniumLibrary
 Library    SetupAndTearDown.py
 Library    SetupAndTearDown.SetupAndTearDown        ${driver}
-Library    page_objects/HomePage.py
-Library    page_objects/HomePage.HomePage    WITH NAME    HomePage
-Library    page_objects/MoviePage.py
-Library    page_objects/MoviePage.MoviePage   WITH NAME    MoviePage
+Library    home_page.py
+Library    home_page.HomePage        ${driver}    WITH NAME    HomePage
+Library    movie_page.py
+Library    movie_page.MoviePage        ${driver}   WITH NAME    MoviePage
 
 *** Variables ***
 ${URL}    http://localhost:3000  # Replace with your actual URL

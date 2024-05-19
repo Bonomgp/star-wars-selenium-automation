@@ -9,9 +9,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from SeleniumLibrary import SeleniumLibrary
 
-class MoviePage(SeleniumLibrary):
+class MoviePage():
 
-    def __init__(self):
+    def __init__(self, driver):
+        self.driver = driver
         self.species_list = "//ul[@id='species']/li"
         self.planets_list = "//ul[@id='planets']/li"
 
