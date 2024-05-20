@@ -1,0 +1,38 @@
+name: Run Robot Framework Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout test repository
+        uses: actions/checkout@v2
+
+      - name: Clone app SWA repository
+        uses: actions/checkout@v2
+        with:
+          repository: MindfulMichaelJames/star-wars
+          path: app  
+
+      - name: Install dependencies
+        run: |
+          cd app
+          yarn install
+
+      - name: Start server
+        run: |
+          cd app
+          yarn start
+      - name: Wait for server to start
+        run: sleep 30  
+        
+      - name: Run Robot Framework tests
+        run: |
+          cd ..
+          pip install -r requirements.txt
+          robot --name 'API Test run' -d results/ tests.robot
