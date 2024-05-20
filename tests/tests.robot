@@ -19,7 +19,7 @@ Sort Movies By Title
 
 View Movie Species
     [Documentation]  View the movie The Empire Strikes Back and check if the Species list has Wookie
-    View Movie Species  'The Empire Strikes Back'
+    View Movie Species  'The Empire Strikes Back'   Wookie
 
 Planets Not In Movie
     [Documentation]  Assert that Planets Camino is not part of the movie The Phantom Menace

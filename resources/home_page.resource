@@ -20,12 +20,12 @@ Sort Movies By Title
     Should Be Equal    ${last_movie_title}    The Phantom Menace
 
 View Movie Species
-    [Arguments]    ${title}
+    [Arguments]    ${title}    ${species}
     Wait Until Element Is Visible    ${specific_movie_title_locator.format(title=${title})}    10s
     Click Element    ${specific_movie_title_locator.format(title=${title})}
     Wait Until Element Is Visible    ${species_list}   10s
     ${species_elements}=    Get Text    ${species_list}
-    Should Contain    ${species_elements}    Wookie
+    Should Contain    ${species_elements}    ${species}
     Click Element    ${back_to_home_button}
 
 Planets Not In Movie
