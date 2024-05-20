@@ -48,3 +48,9 @@ From cmd/bash run:
 pip3 install -r requirements.txt
 ```
 which will install all of the needed requirements in the newly created isolated python environment.
+
+​
+Run Tests:
+```
+robot  --variable browser:chrome -d results/ tests/tests.robot
+```
